@@ -3,15 +3,18 @@ import os
 class UniqueInt:
     @staticmethod
     def process_file(input_file_path, output_file_path):
-        seen = set()  # To store unique integers
+        seen = set()  # To store unique integers in the range
         try:
             with open(input_file_path, 'r') as infile:
                 for line in infile:
-                    line = line.strip()  # Remove leading/trailing whitespaces
+                    line = line.strip()  # Remove whitespaces
                     if line:  # Check if the line is not empty
                         try:
-                            num = int(line)  # Try to convert the line to an integer
-                            seen.add(num)  # Add the integer to the set (duplicates automatically removed)
+                            num = int(line)  # to convert the line to an integer
+                            if -1023 <= num <= 1023:  # Check if the number is in the specified range
+                                seen.add(num)  # Add the integer to the set
+                            else:
+                                print("Number {} is out of the specified range.".format(num))
                         except ValueError:
                             print("Skipping non-integer value: {}".format(line))
             
@@ -19,8 +22,7 @@ class UniqueInt:
 
             with open(output_file_path, 'w') as outfile:
                 for num in sorted_numbers:
-                    outfile.write("{}\n".format(num))  # Write each number in ascending order
-
+                    outfile.write("{}\n".format(num)) 
         except FileNotFoundError:
             print("Error: File {} not found.".format(input_file_path))
 
