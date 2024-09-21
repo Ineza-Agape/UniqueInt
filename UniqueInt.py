@@ -15,7 +15,7 @@ class UniqueInt:
                                 seen.add(num)
                                 outfile.write("{}\n".format(num))  # Write unique integer to the output file
                         except ValueError:
-                            print(f"Skipping non-integer value: {line}")
+                            print("Skipping non-integer value: {}".format(line))
         except FileNotFoundError:
             print(f"Error: File {input_file_path} not found.")
 
