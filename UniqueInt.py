@@ -13,7 +13,7 @@ class UniqueInt:
                         try:
                             num = int(line)  # Try to convert the line to an integer
                             # Only process if the number is within the valid range
-                            if -1023 <= num <= 1023:
+                            if -1023 <= num <= 1023:  # Ensure num is in the valid range
                                 if num not in seen:  # If the integer is not already in the set
                                     seen.add(num)  # Add it to the set
                                     outfile.write("{}\n".format(num))  # Write the unique integer to the output file
