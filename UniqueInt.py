@@ -16,6 +16,7 @@ class UniqueInt:
                             print("Processing number: {}".format(num))
                             
                             # Only process if the number is within the valid range
+                            print("Checking range for: {}".format(num))
                             if -1023 <= num <= 1023:  # Ensure num is in the valid range
                                 if num not in seen:  # If the integer is not already in the set
                                     seen.add(num)  # Add it to the set
