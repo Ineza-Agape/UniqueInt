@@ -17,7 +17,7 @@ class UniqueInt:
                         except ValueError:
                             print("Skipping non-integer value: {}".format(line))
         except FileNotFoundError:
-            print(f"Error: File {input_file_path} not found.")
+           print("Error: File {} not found.".format(input_file_path))
 
     @staticmethod
     def process_directory(input_dir, output_dir):
