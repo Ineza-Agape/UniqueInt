@@ -12,9 +12,11 @@ class UniqueInt:
                     if line:  # Check if the line is not empty
                         try:
                             num = int(line)  # Try to convert the line to an integer
-                            if num not in seen:  # If the integer is not already in the set
-                                seen.add(num)  # Add it to the set
-                                outfile.write("{}\n".format(num))  # Write the unique integer to the output file
+                            # Only process if the number is within the valid range
+                            if -1023 <= num <= 1023:
+                                if num not in seen:  # If the integer is not already in the set
+                                    seen.add(num)  # Add it to the set
+                                    outfile.write("{}\n".format(num))  # Write the unique integer to the output file
                         except ValueError:
                             # Print a message if the line is not a valid integer
                             print("Skipping non-integer value: {}".format(line))
