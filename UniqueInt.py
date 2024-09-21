@@ -27,7 +27,7 @@ class UniqueInt:
         for filename in os.listdir(input_dir):
             if filename.endswith(".txt"):  # Process only .txt files
                 input_file_path = os.path.join(input_dir, filename)
-                output_file_path = os.path.join(output_dir, f"results_{filename}")
+                output_file_path = os.path.join(output_dir, "results_{}".format(filename))
                 UniqueInt.process_file(input_file_path, output_file_path)
                 print(f"Processed {filename} and saved results to {output_file_path}")
 
