@@ -13,7 +13,7 @@ class UniqueInt:
                             num = int(line)  # Convert line to an integer
                             if num not in seen:  # Check if already seen
                                 seen.add(num)
-                                outfile.write(f"{num}\n")  # Write unique integer to the output file
+                                outfile.write("{}\n".format(num))  # Write unique integer to the output file
                         except ValueError:
                             print(f"Skipping non-integer value: {line}")
         except FileNotFoundError:
